@@ -20,7 +20,7 @@ java: cannot find symbol
 ```
 입력내용 : int java = 45;
           System.out.printf("프로그램 시장에서 자바가 차지하는 점유율은 %d%입니다.",java);
-error : Exception in thread "main" java.util.UnknownFormatConversionException: Conversion = '입'
+※ error : Exception in thread "main" java.util.UnknownFormatConversionException: Conversion = '입'
 
 ```
 - 에러내용 : 45%를 입력하고자 할 때 %문자 입력을 잘못함.
@@ -28,7 +28,7 @@ error : Exception in thread "main" java.util.UnknownFormatConversionException: C
 
 ```
  입력내용 : System.out.printf("%,d"\n,100000);
- error : java: illegal character: '\'
+ ※ error : java: illegal character: '\'
 ```
 - 내용 : \n을 ""밖에 적음
 - 해결방법 : System.out.printf("%d\n",10000)으로 입력
@@ -38,7 +38,7 @@ error : Exception in thread "main" java.util.UnknownFormatConversionException: C
 입력내용 : short s2 = 10;
        	 byte b2;
          b2 = s2;
-error : Type mismatch: cannot convert from short to byte
+※ error : Type mismatch: cannot convert from short to byte
 
 ```
 - 내용 : 형변환 , short를 byte로 형변환할 수 없음.
@@ -64,7 +64,8 @@ public class Q004 {
 
     double wheelRound = (2*Math.PI*13)*0.0254; // 못풀었던 부분
 
-    System.out.printf("사용자가 총 %,d회 페달을 밟아 자전거가 총 &%,.3fM를 달렸습니다.\n",pedal,wheelRound*result);
+    System.out.printf
+    ("사용자가 총 %,d회 페달을 밟아 자전거가 총 &%,.3fM를 달렸습니다.\n",pedal,wheelRound*result);
 
 에러내용 :
 
@@ -97,13 +98,11 @@ byte a = 10;
 byte b = 20;
 byte c = a +b;
 
-에러내용 :
-java: incompatible types: possible lossy conversion from int to byte
+※ error : incompatible types: possible lossy conversion from int to byte
 
 ```
 - 내용 : 컴파일 에러라 발생함. 명시적으로 형변환이 필요함.
 - 해결방법 : byte = (byte) (a+b);
-
 
 ```		
 [Method]
@@ -119,9 +118,12 @@ java: incompatible types: possible lossy conversion from int to byte
 		System.out.println("사과");
 	}//test메소드
 	
-	public static void test() { //Duplicate method test() in type Overloading_Practice
+	public static void test() { 
+		
+		※ error : Duplicate method test() in type Overloading_Practice
 		
 		System.out.println("딸기");
+		
 	}//test 메소드
 	
 ```
@@ -174,7 +176,7 @@ public class Q0003 {
 			System.out.printf("%s",papa); ★
 		}
 ```
-- 에러내용 : System.out.printf("%s",papa);가 출력되지 않음
+- 에러내용 : System.out.printf("%s",papa);가 력되지 않음
 - 에러발생 이유 : 문자열 비교를 잘못 입력함.
 - 문자열 비교 방법 : 다음과 같이 입력
 
@@ -193,12 +195,11 @@ String txt = "안녕하세요.";
 		 for(int i=0; i<14; i++) { 
 			 System.out.println(txt.charAt(i));
 		 }
-
+	※ Error : java.lang.StringIndexOutOfBoundsException: index 6, length 6
 ```
-- 에러내용 : java.lang.StringIndexOutOfBoundsException: index 6, length 6	
 - "안녕하세요"의 "안"은 charAt(0),"녕"은 charAt(1),"하"는 charAt(2), "세"은 charAt(3),"요"는 charAt(4),
   "."은 chatAt(5)이다.
-- txt.charAt(6)~ txt.char(14)까지는 문자열이 없으므로 에러가 발생한다.
+- 에러원인 : txt.charAt(6)~ txt.char(14)까지는 문자열이 없으므로 에러가 발생한다.
 - 수정내용 : for(int i=0 ; i<6 ; i++)
 
 ```
@@ -214,7 +215,7 @@ String txt = "안녕하세요.";
 		list4[4] = true;
 		System.out.println(list4[0]);
 		
- java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 3		
+※ error: java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 3		
 		
 ```
 - 0~3까지의 공간이 있는데 list4[4]로 4번쨰 공간을 출력할수 없으므로 "Index 4 out of bounds for length 3"에러가 남.	
@@ -232,38 +233,38 @@ Item item3;
 item1.setColor("노랑");
 System.out.println(item1.getColor());
 
-// Error : java.lang.NullPinterException or NullReferenceException or 널참조
+※ Error : java.lang.NullPinterException or NullReferenceException or 널참조
 
 }
 
 class Item {
-			private String name;
-			private String color;
-			private int price;
+	private String name;
+	private String color;
+	private int price;
 
-			public String getName() {
-					return name;
-			}
-			
-			public void setName(String name) {
-			this.name = name;
-			}
-			
-			public String getColor() {
-			return color;
-			}
-			
-			public void setColor(String Color){
-			this.color = color;
-			}
-			
-			public int getPrice(){
-			return price;
-			}
-				
-			public void setPrice(int price) {
-			this.price = price;
-			}
+	public String getName() {
+			return name;
+	}
+
+	public void setName(String name) {
+	this.name = name;
+	}
+
+	public String getColor() {
+	return color;
+	}
+
+	public void setColor(String Color){
+	this.color = color;
+	}
+
+	public int getPrice(){
+	return price;
+	}
+
+	public void setPrice(int price) {
+	this.price = price;
+	}
 }
 
 ```
@@ -306,8 +307,7 @@ public class Ex39 {
 	public static void bbb() {
 	
 		System.out.println(this.a); ★★★
-		System.out.println(StaticItem.b);
-		
+		System.out.println(StaticItem.b);		
 	
 	}//bbb
 	
@@ -342,15 +342,17 @@ public class ConstructorTest {
 
        Data1 d1 = new Data1();
        Data2 d2 = new Data2(); 
-       //Data2 d2 compile error : onstructor Data2 in class Constructor.Data2 cannot be applied to given types;
+       
+※ Data2 d2 compile error : onstructor Data2 in class Constructor.Data2 cannot be applied to given types;
        
     }
 
 }//ConstructorTest
 
 ```
-- 에러발생 이유 : Data1에는 정의되어 있는 생성자가 없었지만 Data2에는 Data2(int x) 생성자가 정의되어 있으므로 기본 생성자가 추가되지 않는다.
-  			   컴파일러가 기본 생성자를 추가해주는 경우는 '클래스 내에서 생성자가 하나도 없을 때' 이다.  			   
+- 에러발생 이유 : Data1에는 정의되어 있는 생성자가 없었지만 Data2에는 Data2(int x) 생성자가 정의되어 있으므로 
+                 기본 생성자가 추가되지 않는다.컴파일러가 기본 생성자를 추가해주는 경우는 '클래스 내에서 생성자가
+		 하나도 없을 때' 이다.    			   			   
 - 에러 수정 : Data2 d2 = new Data2() -> Data2 d2 = new Data2(10);으로 수정
 
 ```	
@@ -370,12 +372,13 @@ public class ConstructorTest {
 		}//main
 	}//class
 	
-	Error :Exception in thread "main" java.lang.ArithmeticException: / by zero
-	at Exception.ExceptionEx2.main(ExceptionEx2.java:11)
+	※ Error :Exception in thread "main" java.lang.ArithmeticException: / by zero
+	   at Exception.ExceptionEx2.main(ExceptionEx2.java:11)
   
 ```
 - Error : ArithmeticException
-- 에러설명 : 산술연산 과정에서 발생하는 에러이며 정수는 0으로 나누는 것은 금지되어 있기 떄문에 발생하는 에러이다. 하지만 실수를 0으로 나누는 것은 금지되어 있지 않으며 예외가 발생하지 않는다.
+- 에러설명 : 산술연산 과정에서 발생하는 에러이며 정수는 0으로 나누는 것은 금지되어 있기 때문에 발생하는 에러이다. 
+  하지만 실수를 0으로 나누는 것은 금지되어 있지 않으며 예외가 발생하지 않는다.
 
 ```
  	[try - catch] ArithmeticException 예외가 발생하지 않는 방법
@@ -401,8 +404,7 @@ public class ConstructorTest {
 
         }//for
 
-    }//main
-   
+    }//main   
 
 ```
 - 위처럼 입력하면 ArithmeticException 예외가 발생하지 않는다.
@@ -433,7 +435,7 @@ public class ConstructorTest {
 		System.out.println(stack.pop()); 		
 		System.out.println(stack.size());
 		
-		error :  java.util.EmptyStackException
+		※ error :  java.util.EmptyStackException
 		
 ```
 
@@ -445,7 +447,7 @@ public class ConstructorTest {
 
 Queue <String>queue = new Queue <String>();
 
-error : Cannot instantiate the type Queue<String>
+※ error : Cannot instantiate the type Queue<String>
 
 ```
 - 에러원인 : Queue는 객체를 생성할 수 없다.
@@ -471,6 +473,7 @@ error : Cannot instantiate the type Queue<String>
 
 ```
 [final]
+
 final class FinalParent {
 	
 	public final void test() {
@@ -482,8 +485,7 @@ final class FinalParent {
 
 class FinalChild extends FinalParent {	
 
-	※ error : The type FinalChild cannot subclass the final class FinalParent
-             
+	※ error : The type FinalChild cannot subclass the final class FinalParent           
 		
     @Override
     public void test() { 
@@ -503,26 +505,23 @@ class FinalChild extends FinalParent {
 
   //요구사항] int 숫자 -> 1~10까지 저장
 
-        int [] num = new int[10];
+int [] num = new int[10];
 
-        //배열 안에 방 10개 -> 숫자대입
-        //배열 탐색
-        for(int i =0; i< num.length; i++){
-            num[i] = i+1;
-        }
+//배열 안에 방 10개 -> 숫자대입
+//배열 탐색
+	for(int i =0; i< num.length; i++){
+	    num[i] = i+1;
+	}
 
-        //출력
-        System.out.println(num[0]);
-        System.out.println(num[1]);
-        System.out.println(num[2]);
-        System.out.println(num[3]);
-        System.out.println(num[9]);
+//출력
+System.out.println(num[0]);
+System.out.println(num[1]);
+System.out.println(num[2]);
+System.out.println(num[3]);
+System.out.println(num[9]);
 
-        System.out.println(num[10]);
-        ※ error : Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 10
+System.out.println(num[10]);
+※ error : Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 10
 ```
 - 에러원인 : 변수 num의 방의 개수는 10개(0번~9번방)이기 때문에 10번방은 범위를 벗어났으므로
             "ArrayIndexOutOfBoundsException"에러가 발생했다.
-
-```
-
