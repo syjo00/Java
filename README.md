@@ -522,6 +522,36 @@ System.out.println(num[9]);
 
 System.out.println(num[10]);
 ※ error : Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 10
+				    
 ```
 - 에러원인 : 변수 num의 방의 개수는 10개(0번~9번방)이기 때문에 10번방은 범위를 벗어났으므로
             "ArrayIndexOutOfBoundsException"에러가 발생했다.
+```
+[for문]	
+				
+int num = 10;				    
+		
+if(num>0) {//1번 if문
+	
+	//지역변수(if문을 지역으로)
+	String result = "통과";
+	
+	if(num>0){//2번 if문
+	
+		String result2 = "통과":
+	
+	}//2번 if문
+	System.out.println(result2);
+	
+}//1번 if문		    
+System.out.println(result);
+	
+※ 에러 : result cannot be resolved to a variable.
+
+```
+- 에러원인 : 변수를 출력할 때는 제어문 내에서 출력을 해야한다.	
+- 해결방법 : "System.out.println(result);"은 1번 if문 내에 포함되어야 하고, "System.out.println(result2);"은 		2번 if문 내에 포함되어야 한다.
+
+```
+	
+	
