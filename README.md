@@ -574,5 +574,5 @@ private static void main(String[] args){
 		     
 ```
 - 에러 원인 : "System.out.println(i);"는 if문 안에 있어야 한다.
-- continue: i가 5일 때 처음으로 돌아간다(일시중단), 반복문을 continue이후에 실행하지 않고 반복문의 처음으로 돌아가는 역할	   
+- continue : i가 5일 때 처음으로 돌아간다(일시중단), 반복문을 continue이후에 실행하지 않고 반복문의 처음으로 돌아가는 역할	   
 	      
