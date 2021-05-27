@@ -527,7 +527,7 @@ System.out.println(num[10]);
 - 에러원인 : 변수 num의 방의 개수는 10개(0번~9번방)이기 때문에 10번방은 범위를 벗어났으므로
             "ArrayIndexOutOfBoundsException"에러가 발생했다.
 ```
-[for문]	
+[for문] 
 				
 int num = 10;				    
 		
@@ -553,5 +553,26 @@ System.out.println(result);
 - 해결방법 : "System.out.println(result);"은 1번 if문 내에 포함되어야 하고, "System.out.println(result2);"은 		2번 if문 내에 포함되어야 한다.
 
 ```
+[for문] continue	
 	
+private static void main(String[] args){
+    
+  for(int i=1; i<=10; i++){
+  
+	if(i==5){	
+		
+	  continue;	
+		    	     
+	}//if문		     
+	System.out.println(i);
+	※ error : Unreachable code : 도달할 수 없는 코드
+		     
+  }//for
+ System.out.println();
 	
+}//main
+		     
+```
+- 에러 원인 : "System.out.println(i);"는 if문 안에 있어야 한다.
+- <continue> : i가 5일 때 처음으로 돌아간다(일시중단), 
+	     반복문을 continue이후에 실행하지 않고 반복문의 처음으로 돌아가는 역할	     
