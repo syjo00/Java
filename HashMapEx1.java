@@ -10,7 +10,7 @@ public class HashMapEx1 {
 		HashMap map = new HashMap();
 		map.put("myId", "1234");
 		map.put("asdf", "1111");
-		map.put("asdf","1234");
+		map.put("asdf","1234");  //기존의 값인 asdf = 1111의 값을 덮어썼다.
 		
 		Scanner s = new Scanner(System.in); //화면으로부터 라인단위로 입력받는다.
 		
