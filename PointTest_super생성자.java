@@ -24,7 +24,7 @@ class Point {
 		return "x :"+x+",y:"+y;
 	}
 
-}
+}//POINT
 
 class Point3D extends Point {
 	
@@ -36,7 +36,8 @@ class Point3D extends Point {
 		//super()는 Point3D의 조상인 Point클래스의 기본 생성자인 Point()를 의미한다.
 		
 		super(x,y);
-		
+		//조상클래스의 멤버변수는 조상의 생성자에 의해 초기화된다.
+		//조상클래스의 생성자 Point(int x,int y)를 호출한다.
 		this.z = z;
 	}
 	
@@ -44,4 +45,4 @@ class Point3D extends Point {
 		return "x : " +x+"y :" +y+"z"+z;
 	}
 	
-}
+}//Point3D
