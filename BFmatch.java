@@ -53,6 +53,7 @@ class BFmatch {
 		
 		else {			
 			
+			//일치하는 문자 바로 앞까지의 문자 개수를 반각 문자로 환산하여 구함
 			int len = 0;
 			
 			for(int i=0;i<idx;i++)
