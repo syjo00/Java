@@ -43,14 +43,14 @@ public class P11399_ATM {
 		
 		}
 						
-		S[0] = A[0];
+		S[0] = A[0]; // 합 배열 만들기
 		
 		for(int i=1;i<N;i++) {
 			
 			S[i] = S[i-1]+A[i];
 		}
 		
-		int sum=0;
+		int sum=0; //합 배열 총합 구하기
 		
 		for(int i=0;i<N;i++) {
 			
