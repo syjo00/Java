@@ -40,9 +40,9 @@ public class P11399_ATM {
 			}
 			
 			A[insert_point] = insert_value;
-			
-		}//for2
 		
+		}
+						
 		S[0] = A[0];
 		
 		for(int i=1;i<N;i++) {
