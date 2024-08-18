@@ -42,6 +42,8 @@ public class P10989_수정렬하기3 {
 		
 		while(count!=max_size) { //최대 자리수만큼 반복하기
 			
+			//현재자리수를 기준으로 A배열 데이터를 bucket에 count
+			
 			int bucket[]  = new int[10];
 			for(int i=0;i<A.length;i++) {
 				bucket[(A[i]/jarisu)%10]++;	//일의 자리부터 시작하기
